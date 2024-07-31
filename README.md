@@ -39,6 +39,8 @@ This script can help Red Teaming efforts by spraying a password to every domain 
 
 OR 
 
+  > PowerShell -ExecutionPolicy Bypass
+
   > .\Domain_Password_Spray.ps1 -UserListFilePath "C:\Users\YourUser\Documents\usernames.txt" -Password "your_password" -OutputFilePath "C:\Users\YourUser\Documents\output.txt"
 
 
