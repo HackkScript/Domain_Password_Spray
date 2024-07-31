@@ -41,4 +41,3 @@ $pwnedUsers | Out-File -FilePath $OutputFilePath
 # Output the path to the saved file
 Write-Output "Pwned usernames have been saved to: $OutputFilePath"
 
-#.\Check-Credentials.ps1 -UserListFilePath "path\to\usernames.txt" -Password "your_password" -OutputFilePath "path\to\pwned_users.txt"
