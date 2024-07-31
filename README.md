@@ -27,3 +27,19 @@ This script can help Red Teaming efforts by spraying a password to every domain 
 - OutputFilePath (optional): The path to the output file where results will be saved. Default is output.txt.
 
 - DelayBetweenAttempts (optional): The delay in seconds between attempts to avoid triggering account lockouts. Default is 2 seconds.
+
+**Usage**
+1. Create a text file with a list of usernames (one username per line), for example, usernames.txt:
+  - user1
+  - user2
+  - user3
+
+2. Run the PowerShell script with the file path, password, and optional output file path as parameters:
+  > PowerShell -ExecutionPolicy Bypass -File .\Domain_Password_Spray.ps1 -UserListFilePath "path\to\usernames.txt" -Password "your_password" -OutputFilePath "path\to\output.txt"
+
+OR 
+
+  > .\Domain_Password_Spray.ps1 -UserListFilePath "C:\Users\YourUser\Documents\usernames.txt" -Password "your_password" -OutputFilePath "C:\Users\YourUser\Documents\output.txt"
+
+
+
