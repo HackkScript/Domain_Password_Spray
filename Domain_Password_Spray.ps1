@@ -1,7 +1,7 @@
 param (
     [string]$UserListFilePath,
     [string]$Password,
-    [string]$OutputFilePath = "pwned_users.txt"
+    [string]$OutputFilePath = "pwned_users.txt",
     [int]$DelayBetweenAttempts = 2
 )
 
