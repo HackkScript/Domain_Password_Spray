@@ -6,7 +6,9 @@
 
 The script supports:
 `Resume capability`: Automatically keeps track of progress so it can resume from where it left off.
+
 `Throttling`: Adds a delay between each authentication attempt to avoid account lockouts or throttling by the authentication system.
+
 `Output logging`: Stores all successfully authenticated (pwned) usernames in a specified output file.
 
 ⚠️ `Use responsibly`. This tool should only be used for authorized auditing and security testing within your own infrastructure.
@@ -25,13 +27,12 @@ The script supports:
 
 **Parameters**
 
-- UserListFilePath: The path to the file containing the list of usernames.
-
-- Password: The password to verify the credentials.
-
-- OutputFilePath (optional): The path to the output file where results will be saved. Default is output.txt.
-
-- DelayBetweenAttempts (optional): The delay in seconds between attempts to avoid triggering account lockouts. Default is 2 seconds.
+Parameter				      Alias			  Description
+-UserListFilePath		  -U			    (Required) Path to the file containing usernames (one per line).
+-Password				      -P			    (Required) The password to test against each username.
+-OutputFilePath			  -O			    Path to the file where pwned usernames are saved. Default: timestamped.
+-ResumeFilePath			  -R			    Path to the file that stores progress index. Default: timestamped.
+-DelayBetweenAttempts	-D			    Delay in seconds between each login attempt. Default: 2 seconds.
 
 **Usage**
 1. Create a text file with a list of usernames (one username per line), for example, usernames.txt:
@@ -40,13 +41,18 @@ The script supports:
   - user3
 
 2. Run the PowerShell script with the file path, password, and optional output file path as parameters:
-  > PowerShell -ExecutionPolicy Bypass -File .\Domain_Password_Spray.ps1 -UserListFilePath "path\to\usernames.txt" -Password "your_password" -OutputFilePath "path\to\output.txt"
+  > PowerShell -ExecutionPolicy Bypass -File .\Check-PwnedUsers.ps1 -U users.txt -P "P@ssw0rd" 
 
 OR 
 
   > PowerShell -ExecutionPolicy Bypass
 
-  > .\Domain_Password_Spray.ps1 -UserListFilePath "C:\Users\YourUser\Documents\usernames.txt" -Password "your_password" -OutputFilePath "C:\Users\YourUser\Documents\output.txt"
+  > .\Check-PwnedUsers.ps1 -U users.txt -P "P@ssw0rd" -O results.txt -R resume.txt -D 1
 
+📂 Output
+Pwned Usernames: Logged in the specified or default output file.
 
+Resume Index: Tracks the last attempted username, allowing continuation in case of interruption.
+
+Console Progress: Real-time feedback on progress and stats (users checked, remaining, pwned count).
 
