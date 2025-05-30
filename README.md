@@ -28,15 +28,15 @@ The script supports:
 
 **Parameters**
 
--UserListFilePath / -U: Path to username list file (required)
+- UserListFilePath / -U: Path to username list file (required)
 
--Password / -P: Password to test (required)
+- Password / -P: Password to test (required)
 
--OutputFilePath / -O: Path to output file for pwned users (default: timestamped)
+- OutputFilePath / -O: Path to output file for pwned users (default: timestamped)
 
--ResumeFilePath / -R: Path to file for tracking resume index (default: timestamped)
+- ResumeFilePath / -R: Path to file for tracking resume index (default: timestamped)
 
--DelayBetweenAttempts / -D: Delay in seconds between login attempts (default: 2)
+- DelayBetweenAttempts / -D: Delay in seconds between login attempts (default: 2)
 
 **Usage**
 1. Create a text file with a list of usernames (one username per line), for example, usernames.txt:
@@ -53,10 +53,12 @@ OR
 
   > .\Domain_Password_Spray.ps1 -U users.txt -P "P@ssw0rd" -O results.txt -R resume.txt -D 1
 
-📂 Output
-Pwned Usernames: Logged in the specified or default output file.
 
-Resume Index: Tracks the last attempted username, allowing continuation in case of interruption.
+`📂 Output`
 
-Console Progress: Real-time feedback on progress and stats (users checked, remaining, pwned count).
+`Pwned Usernames`: Logged in the specified or default output file.
+
+`Resume Index`: Tracks the last attempted username, allowing continuation in case of interruption.
+
+`Console Progress`: Real-time feedback on progress and stats (users checked, remaining, pwned count).
 
