@@ -2,9 +2,14 @@
 
 **Description**
 
-`Domain_Password_Spray.ps1` is a powerful PowerShell script designed for Red Teaming activities. It reads a list of usernames from a file and verifies their credentials using a specified password. If the credentials are valid, it prints a message indicating that the username has been "pwned" in green color and saves the output messages to a specified text file.
+`Domain_Password_Spray.ps1` is a PowerShell script that checks a list of usernames against a single supplied password to identify potentially compromised (or "pwned") accounts. It’s useful for detecting weak password reuse across accounts in environments like Active Directory.
 
-This script can help Red Teaming efforts by spraying a password to every domain user in the organization, identifying accounts that use the same password. It's crafted to bypass Antivirus and EDR solutions, making it a valuable tool in your security testing toolkit.
+The script supports:
+`Resume capability`: Automatically keeps track of progress so it can resume from where it left off.
+`Throttling`: Adds a delay between each authentication attempt to avoid account lockouts or throttling by the authentication system.
+`Output logging`: Stores all successfully authenticated (pwned) usernames in a specified output file.
+
+⚠️ `Use responsibly`. This tool should only be used for authorized auditing and security testing within your own infrastructure.
 
 **Features**
 
