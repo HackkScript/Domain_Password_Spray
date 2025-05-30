@@ -45,13 +45,13 @@ The script supports:
   - user3
 
 2. Run the PowerShell script with the file path, password, and optional output file path as parameters:
-  > PowerShell -ExecutionPolicy Bypass -File .\Domain_Password_Spray.ps1 -U users.txt -P "P@ssw0rd" 
+  > PowerShell -ExecutionPolicy Bypass -File .\Domain_Password_Spray.ps1 -UserListFilePath users.txt -Password "P@ssw0rd" 
 
 OR 
 
   > PowerShell -ExecutionPolicy Bypass
 
-  > .\Domain_Password_Spray.ps1 -U users.txt -P "P@ssw0rd" -O results.txt -R resume.txt -D 1
+  > .\Domain_Password_Spray.ps1 -UserListFilePath users.txt -Password "P@ssw0rd" -Output results.txt -ResumeFilePath resume.txt -DelayBetweenAttempts 1
 
 
 `📂 Output`
