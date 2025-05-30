@@ -23,7 +23,7 @@
     Number of seconds to wait between each attempt. Default is 2 seconds.
 
 .EXAMPLE
-    .\Check-PwnedUsers.ps1 -U users.txt -P P@ssw0rd
+    .\Domain_Password_Spray.ps1 -UserListFilePath users.txt -Password P@ssw0rd
 #>
 
 param (
